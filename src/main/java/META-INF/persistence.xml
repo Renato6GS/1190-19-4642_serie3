@@ -5,7 +5,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   version="2.1">
 
   <persistence-unit name="PERSISTENCE">
-    <description> Crud básico Hibernate JPA</description>
+    <description> Crud básico Hibernate JPA con JSF para el parcial 2 </description>
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
     <properties>
