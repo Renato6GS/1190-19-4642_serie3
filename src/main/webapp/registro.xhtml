@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Registro de pacientes</title>
+
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+		crossorigin="anonymous"></link>
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col">
+				<h1 class="mb-3 text-primary">REGISTRO DE PACIENTES</h1>
+				<h:form action="">
+				
+					<!-- Tipo de solicitud -->
+					<div class="form-group row">
+						<div class="col-12 col-md-3 mb-3">
+							<label class="text-secondary">Tipo de solicitud</label>
+						</div>
+						<div class="col-12 col-md-9 mb-3">
+						
+							<div class="form-check">
+								<h:selectOneRadio id="tipo" value = "#{paciente.tipo_de_solicitud}" class="form-check-label" layout="pageDirection" required="true" requiredMessage="Seleccione una opción."> 
+								   <f:selectItem itemValue = "inscripcion" itemLabel = "  Inscripcion" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "actualizacion" itemLabel = "  Actualizacion" class="from-check-input mr-2" />
+								</h:selectOneRadio>
+								<h:message for="tipo" style="color:red" />
+							</div>
+						</div>
+					</div>
+					
+					<!-- Número de afiliación y nit -->
+					<div class="form-group row">
+						<div class="col-12 col-md-6 mb-3">
+							<label for="afiliacion" class="text-secondary">Número de afiliación</label>
+							<h:inputText class="form-control" id="afiliacion" value="#{paciente.no_de_afiliacion}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="afiliacion" style="color:red" />
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="nit" class="text-secondary">Nit</label>
+							<h:inputText class="form-control" id="nit" value="#{paciente.nit}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="nit" style="color:red" />
+						</div>
+					</div>
+					
+					<!-- Fecha de nacimiento -->
+					<div class="form-group row">
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label>Fecha de nacimiento</label>
+						</div>
+						<div class="col-12 col-md-3 mb-3">
+							<label>Día</label>
+							<h:selectOneMenu class="custom-select custom-select-md mb-3" value="#{paciente.dia_nacimiento}" required="true" requiredMessge="Seleccione una opción.">
+								<f:selectItem itemValue="1" itemLabel="1"></f:selectItem>
+							    <f:selectItem itemValue="2" itemLabel="2"></f:selectItem>
+							    <f:selectItem itemValue="3" itemLabel="3"></f:selectItem>
+							    <f:selectItem itemValue="4" itemLabel="4"></f:selectItem>
+							    <f:selectItem itemValue="5" itemLabel="5"></f:selectItem>
+							    <f:selectItem itemValue="6" itemLabel="6"></f:selectItem>
+							    <f:selectItem itemValue="7" itemLabel="7"></f:selectItem>
+							    <f:selectItem itemValue="8" itemLabel="8"></f:selectItem>
+							    <f:selectItem itemValue="9" itemLabel="9"></f:selectItem>
+							    <f:selectItem itemValue="10" itemLabel="10"></f:selectItem>
+							    <f:selectItem itemValue="11" itemLabel="11"></f:selectItem>
+							    <f:selectItem itemValue="12" itemLabel="12"></f:selectItem>
+							    <f:selectItem itemValue="13" itemLabel="13"></f:selectItem>
+							    <f:selectItem itemValue="14" itemLabel="14"></f:selectItem>
+							    <f:selectItem itemValue="15" itemLabel="15"></f:selectItem>
+							    <f:selectItem itemValue="16" itemLabel="16"></f:selectItem>
+							    <f:selectItem itemValue="17" itemLabel="17"></f:selectItem>
+							    <f:selectItem itemValue="18" itemLabel="18"></f:selectItem>
+							    <f:selectItem itemValue="19" itemLabel="19"></f:selectItem>
+							    <f:selectItem itemValue="20" itemLabel="20"></f:selectItem>
+							    <f:selectItem itemValue="21" itemLabel="21"></f:selectItem>
+							    <f:selectItem itemValue="22" itemLabel="22"></f:selectItem>
+							    <f:selectItem itemValue="23" itemLabel="23"></f:selectItem>
+							    <f:selectItem itemValue="24" itemLabel="24"></f:selectItem>
+							    <f:selectItem itemValue="25" itemLabel="25"></f:selectItem>
+							    <f:selectItem itemValue="26" itemLabel="26"></f:selectItem>
+							    <f:selectItem itemValue="27" itemLabel="27"></f:selectItem>
+							    <f:selectItem itemValue="28" itemLabel="28"></f:selectItem>
+							    <f:selectItem itemValue="29" itemLabel="29"></f:selectItem>
+							    <f:selectItem itemValue="30" itemLabel="30"></f:selectItem>
+							    <f:selectItem itemValue="31" itemLabel="31"></f:selectItem>
+							</h:selectOneMenu>
+						</div>
+						<div class="col-12 col-md-3 mb-3">
+							<label>Mes</label>
+							<h:selectOneMenu class="custom-select custom-select-md mb-3" value="#{paciente.mes_nacimiento}">
+								<f:selectItem itemValue="1" itemLabel="1"></f:selectItem>
+							    <f:selectItem itemValue="2" itemLabel="2"></f:selectItem>
+							    <f:selectItem itemValue="3" itemLabel="3"></f:selectItem>
+							    <f:selectItem itemValue="4" itemLabel="4"></f:selectItem>
+							    <f:selectItem itemValue="5" itemLabel="5"></f:selectItem>
+							    <f:selectItem itemValue="6" itemLabel="6"></f:selectItem>
+							    <f:selectItem itemValue="7" itemLabel="7"></f:selectItem>
+							    <f:selectItem itemValue="8" itemLabel="8"></f:selectItem>
+							    <f:selectItem itemValue="9" itemLabel="9"></f:selectItem>
+							    <f:selectItem itemValue="10" itemLabel="10"></f:selectItem>
+							    <f:selectItem itemValue="11" itemLabel="11"></f:selectItem>
+							    <f:selectItem itemValue="12" itemLabel="12"></f:selectItem>
+							</h:selectOneMenu>
+						</div>
+						<div class="col-12 col-md-3 mb-3">
+							<label>Año</label>
+							<h:selectOneMenu class="custom-select custom-select-md mb-3" value="#{paciente.anio_nacimiento}">
+								<f:selectItem itemValue="1" itemLabel="1960"></f:selectItem>
+							    <f:selectItem itemValue="2" itemLabel="1961"></f:selectItem>
+							    <f:selectItem itemValue="3" itemLabel="1962"></f:selectItem>
+							    <f:selectItem itemValue="4" itemLabel="1963"></f:selectItem>
+							    <f:selectItem itemValue="5" itemLabel="1964"></f:selectItem>
+							    <f:selectItem itemValue="6" itemLabel="1965"></f:selectItem>
+							    <f:selectItem itemValue="7" itemLabel="1966"></f:selectItem>
+							    <f:selectItem itemValue="8" itemLabel="1967"></f:selectItem>
+							    <f:selectItem itemValue="9" itemLabel="1968"></f:selectItem>
+							    <f:selectItem itemValue="10" itemLabel="1969"></f:selectItem>
+							    <f:selectItem itemValue="11" itemLabel="1970"></f:selectItem>
+							    <f:selectItem itemValue="12" itemLabel="1971"></f:selectItem>
+							    <f:selectItem itemValue="13" itemLabel="1972"></f:selectItem>
+							    <f:selectItem itemValue="14" itemLabel="1973"></f:selectItem>
+							    <f:selectItem itemValue="15" itemLabel="1974"></f:selectItem>
+							    <f:selectItem itemValue="16" itemLabel="1975"></f:selectItem>
+							    <f:selectItem itemValue="17" itemLabel="1976"></f:selectItem>
+							    <f:selectItem itemValue="18" itemLabel="1977"></f:selectItem>
+							    <f:selectItem itemValue="19" itemLabel="1978"></f:selectItem>
+							    <f:selectItem itemValue="20" itemLabel="1979"></f:selectItem>
+							    <f:selectItem itemValue="21" itemLabel="1980"></f:selectItem>
+							    <f:selectItem itemValue="22" itemLabel="1981"></f:selectItem>
+							    <f:selectItem itemValue="23" itemLabel="1982"></f:selectItem>
+							    <f:selectItem itemValue="24" itemLabel="1983"></f:selectItem>
+							    <f:selectItem itemValue="25" itemLabel="1984"></f:selectItem>
+							    <f:selectItem itemValue="26" itemLabel="1985"></f:selectItem>
+							    <f:selectItem itemValue="27" itemLabel="1986"></f:selectItem>
+							    <f:selectItem itemValue="28" itemLabel="1987"></f:selectItem>
+							    <f:selectItem itemValue="29" itemLabel="1988"></f:selectItem>
+							    <f:selectItem itemValue="30" itemLabel="1989"></f:selectItem>
+							    <f:selectItem itemValue="31" itemLabel="1990"></f:selectItem>
+							    <f:selectItem itemValue="32" itemLabel="1991"></f:selectItem>
+							    <f:selectItem itemValue="33" itemLabel="1992"></f:selectItem>
+							    <f:selectItem itemValue="34" itemLabel="1993"></f:selectItem>
+							    <f:selectItem itemValue="35" itemLabel="1994"></f:selectItem>
+							    <f:selectItem itemValue="36" itemLabel="1995"></f:selectItem>
+							    <f:selectItem itemValue="37" itemLabel="1996"></f:selectItem>
+							    <f:selectItem itemValue="38" itemLabel="1997"></f:selectItem>
+							    <f:selectItem itemValue="39" itemLabel="1998"></f:selectItem>
+							    <f:selectItem itemValue="40" itemLabel="1999"></f:selectItem>
+							    <f:selectItem itemValue="41" itemLabel="2000"></f:selectItem>
+							    <f:selectItem itemValue="42" itemLabel="2001"></f:selectItem>
+							    <f:selectItem itemValue="43" itemLabel="2002"></f:selectItem>
+							    <f:selectItem itemValue="44" itemLabel="2003"></f:selectItem>
+							    <f:selectItem itemValue="45" itemLabel="2004"></f:selectItem>
+							    <f:selectItem itemValue="46" itemLabel="2005"></f:selectItem>
+							    <f:selectItem itemValue="47" itemLabel="2006"></f:selectItem>
+							    <f:selectItem itemValue="48" itemLabel="2007"></f:selectItem>
+							    <f:selectItem itemValue="49" itemLabel="2008"></f:selectItem>
+							    <f:selectItem itemValue="50" itemLabel="2009"></f:selectItem>
+							    <f:selectItem itemValue="51" itemLabel="2010"></f:selectItem>
+							    <f:selectItem itemValue="52" itemLabel="2011"></f:selectItem>
+							    <f:selectItem itemValue="53" itemLabel="2012"></f:selectItem>
+							    <f:selectItem itemValue="54" itemLabel="2013"></f:selectItem>
+							    <f:selectItem itemValue="55" itemLabel="2014"></f:selectItem>
+							    <f:selectItem itemValue="56" itemLabel="2015"></f:selectItem>
+							    <f:selectItem itemValue="57" itemLabel="2016"></f:selectItem>
+							    <f:selectItem itemValue="58" itemLabel="2017"></f:selectItem>
+							    <f:selectItem itemValue="59" itemLabel="2018"></f:selectItem>
+							    <f:selectItem itemValue="60" itemLabel="2019"></f:selectItem>
+							    <f:selectItem itemValue="61" itemLabel="2020"></f:selectItem>
+							    <f:selectItem itemValue="62" itemLabel="2021"></f:selectItem>
+							</h:selectOneMenu>
+						</div>
+					</div>
+					
+					<!-- Nombres, apellidos y teléfono -->
+					<div class="form-group row">
+						<div class="col-12 col-md-4 mb-3">
+							<label for="apellidos" class="text-secondary">Apellidos</label>
+							<h:inputText class="form-control" id="apellidos" value="#{paciente.apellidos}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="apellidos" style="color:red" />
+						</div>
+						<div class="col-12 col-md-4 mb-3">
+							<label for="nombres" class="text-secondary">Nombres</label>
+							<h:inputText class="form-control" id="nombres" value="#{paciente.nombres}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="nombres" style="color:red" />
+						</div>
+						<div class="col-12 col-md-4 mb-3">
+							<label for="telefono" class="text-secondary">Teléfono</label>
+							<h:inputText class="form-control" id="telefono" value="#{paciente.telefono}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="telefono" style="color:red" />
+						</div>
+					</div>
+					
+					<!-- Sexo, estado civil, grupo étnico y nacionalidad -->
+					<div class="form-group row">
+						<div class="col-12 col-md-3 mb-3">
+							<label class="text-secondary">Sexo</label>
+							<div class="form-check">
+								<h:selectOneRadio id="sexo" value = "#{paciente.sexo}" class="form-check-label" layout="pageDirection" required="true" requiredMessage="Seleccione una opción."> 
+								   <f:selectItem itemValue = "hombre" itemLabel = "Hombre" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "mujer" itemLabel = "Mujer" class="from-check-input mr-2" />
+								</h:selectOneRadio>
+								<h:message for="sexo" style="color:red" />
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label class="text-secondary">Estado civil</label>
+							<div class="form-check">
+								<h:selectOneRadio id="estado" value = "#{paciente.estado_civil}" class="form-check-label" layout="pageDirection" required="true" requiredMessage="Seleccione una opción."> 
+								   <f:selectItem itemValue = "soltero" itemLabel = "Soltero" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "unionDeHecho" itemLabel = "Unión de hecho" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "casado" itemLabel = "Casado" class="from-check-input mr-2" />
+								</h:selectOneRadio>
+								<h:message for="estado" style="color:red" />
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label class="text-secondary">Grupo étnico</label>
+							<div class="form-check">
+								<h:selectOneRadio id="grupo" value = "#{paciente.grupo_etnico}" class="form-check-label" layout="pageDirection" required="true" requiredMessage="Seleccione una opción."> 
+								   <f:selectItem itemValue = "maya" itemLabel = "Maya" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "garifuna" itemLabel = "Garifuna" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "xinca" itemLabel = "Xinca" class="from-check-input mr-2" />
+								   <f:selectItem itemValue = "ladino" itemLabel = "Ladino" class="from-check-input mr-2" />
+								</h:selectOneRadio>
+								<h:message for="grupo" style="color:red" />
+							</div>
+						</div>
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label for="nacionalidad" class="text-secondary">Nacionalidad</label>
+							<h:inputText class="form-control" id="nacionalidad" value="#{paciente.nacionalidad}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="nacionalidad" style="color:red" />
+						</div>
+					</div>
+
+					<!-- CUI, Departamento, municipio y Dirección -->
+					<div class="form-group row">
+						<div class="col-12 col-md-3 mb-3">
+							<label for="cui" class="text-secondary" >CUI</label>
+							<h:inputText class="form-control" id="cui" value="#{paciente.cui}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="cui" style="color:red" />
+						</div>
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label for="departamento" class="text-secondary">Departamento</label>
+							<h:inputText class="form-control" id="departamento" value="#{paciente.departamento}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="departamento" style="color:red" />
+						</div>
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label for="municipio" class="text-secondary">Municipio</label>
+							<h:inputText class="form-control" id="municipio" value="#{paciente.municipio}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="municipio" style="color:red" />
+						</div>
+						
+						<div class="col-12 col-md-3 mb-3">
+							<label for="direccion" class="text-secondary">Direccion</label>
+							<h:inputText class="form-control" id="direccion" value="#{paciente.direccion}" required="true" requiredMessage="Llene este campo."></h:inputText>
+							<h:message for="direccion" style="color:red" />
+						</div>
+					</div>
+					
+					<!-- Nombres, apellidos y teléfono del padre -->
+					<div class="form-group row">
+						<div class="col-12 mb-3">
+							<label class="text-primary">Datos del padre</label>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-12 col-md-4">
+							<label for="apellidosPadre" class="text-secondary">Apellidos del padre</label>
+							<h:inputText class="form-control" id="apellidosPadre" value="#{paciente.apellidos_padre}"></h:inputText>
+						</div>
+						<div class="col-12 col-md-4 mb-3">
+							<label for="nombresPadre" class="text-secondary">Nombres del padre</label>
+							<h:inputText class="form-control" id="nombresPadre" value="#{paciente.nombres_padre}"></h:inputText>
+						</div>
+						<div class="col-12 col-md-4 mb-3">
+							<label for="telefonoPadre" class="text-secondary">Teléfono del padre</label>
+							<h:inputText class="form-control" id="telefonoPadre" value="#{paciente.telefono_padre}"></h:inputText>
+						</div>
+					</div>
+					
+					<!-- Nombres, apellidos y teléfono de la madre -->
+					<div class="form-group row">
+						<div class="col-12 mb-3">
+							<label class="text-primary">Datos de la madre</label>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-12 col-md-4">
+							<label for="apellidosMadre" class="text-secondary">Apellidos del madre</label>
+							<h:inputText class="form-control" id="apellidosMadre" value="#{paciente.apellidos_madre}"></h:inputText>
+						</div>
+						<div class="col-12 col-md-4 mb-3">
+							<label for="nombresMadre" class="text-secondary">Nombres de la madre</label>
+							<h:inputText class="form-control" id="nombresMadre" value="#{paciente.nombres_madre}"></h:inputText>
+						</div>
+						<div class="col-12 col-md-4 mb-3">
+							<label for="telefonoMadre" class="text-secondary">Teléfono de la madre</label>
+							<h:inputText class="form-control" id="telefonoMadre" value="#{paciente.telefono_madre}"></h:inputText>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-12 text-center">
+							<div class="row ">
+								<div class="col-12 col-sm-4 col-md-4">
+									<h:commandButton action="#{pacienteBean.regresarAIndex()}" class="btn btn-link btn-block" type="submit" value="Regresar"></h:commandButton>
+								</div>
+								<div class="col-12 col-sm-4 col-md-4 justify-content-center">
+									<h:commandButton onclick="check()" action="#{pacienteBean.actualizarORegistrar(paciente)}"  class="btn btn-primary btn-block" value="#{pacienteBean.estado ? 'Registrar' : 'Actualizar'}"></h:commandButton>
+								</div>
+							</div>
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+		crossorigin="anonymous"></script>
+		
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="sweetalert2.all.min.js"></script>
+	<script src="sweetalert2.min.js"></script>
+		
+	<script type="text/javascript"> 
+ 		function check() {
+//  			alert("Registro terminado.");
+ 			Swal.fire({
+ 				  position: 'top-end',
+ 				  icon: 'success',
+ 				  title: 'Transacción terminada con éxito',
+ 				  showConfirmButton: false,
+ 				  timer: 1500
+ 			})
+ 		}
+ 		
+ 		
+	</script>
+
+</h:body>
+</html>
